@@ -17,3 +17,22 @@ output "vpc_cidrblock" {
   
 }
 
+output "launch_configuration_publicip" {
+ value = aws_launch_configuration.example.associate_public_ip_address 
+}
+
+output "security_group_id" {
+  value = aws_security_group.instance.id
+}
+
+output "alb_security_group" {
+  value = aws_security_group.alb.id
+}
+
+output "aws_launch_instance" {
+  value = aws_launch_configuration.example.instance_type
+}
+
+output "aws_subnets" {
+  value = data.aws_subnets.default.ids
+}
